@@ -13,11 +13,15 @@ createNewStudent = (studentInfo) => {
 updateStudentById = (student, id) => {
   return knex('students').update(student, ['id', 'first', 'last']).where('id', id)
 }
+deleteStudentById = (id) => {
+  return knex('students').where('id', id).delete().returning('*')
+}
 
 module.exports = {
   getAllStudents,
   getStudentById,
   createNewStudent,
-  updateStudentById
+  updateStudentById,
+  deleteStudentById
 
 }

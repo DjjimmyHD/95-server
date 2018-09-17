@@ -20,6 +20,9 @@ app.post('/', (req, res, next) => {
 app.put('/:id', (req, res, next) => {
   queries.updateStudentById(req.body, req.params.id).then(updatedStudent => res.json({data: updatedStudent}))
 })
+app.delete('/:id', (req, res, next) => {
+  queries.deleteStudentById(req.params.id).then(responseData => res.json({data: responseData}))
+})
 
 app.listen(port, () => {
   console.log(`I got you on ${port}`)
