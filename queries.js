@@ -7,8 +7,12 @@ getAllStudents = () => {
 getStudentById = (id) => {
   return knex('students').where('id', id)
 }
+createNewStudent = (studentInfo) => {
+  return knex('students').insert(studentInfo).returning('*')
+}
 
 module.exports = {
   getAllStudents,
-  getStudentById
+  getStudentById,
+  createNewStudent
 }

@@ -15,6 +15,9 @@ app.get('/', (req, res, next) => {
 app.get('/:id', (req, res, next) => {
   queries.getStudentById(req.params.id).then(student => res.json({data: student}))
 })
+app.post('/', (req, res, next) => {
+  queries.createNewStudent(req.body).then(responseData => res.json({data: responseData}))
+})
 
 app.listen(port, () => {
   console.log(`I got you on ${port}`)
