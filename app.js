@@ -14,6 +14,9 @@ app.get('/', (req, res, next) => {
 app.get('/:id', (req, res, next) => {
   queries.getStudentById(req.params.id).then(student => res.json({data: student}))
 })
+app.get('/block/:id', (req, res, next) => {
+  queries.getStudentAndBlock(req.params.id).then(result => res.json({data: result}))
+})
 app.post('/', (req, res, next) => {
   queries.createNewStudent(req.body).then(responseData => res.json({data: responseData}))
 })
