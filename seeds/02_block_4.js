@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('block_4').insert([
-        {name: 'Real World and Capstones', curriculum: 'Arrays & Linked Lists, Stacks & Queues, Sorting Algorithms, Interviews, CAPSTONES'}
+        {block_name: 'Real World and Capstones', curriculum: 'Arrays & Linked Lists, Stacks & Queues, Sorting Algorithms, Interviews, CAPSTONES'}
       ]);
     });
 };
