@@ -1,3 +1,4 @@
+
 exports.up = function (knex, Promise) {
     return knex.schema.createTable('g95_students', (student) => {
       student.increments('id')
@@ -6,7 +7,7 @@ exports.up = function (knex, Promise) {
       student.string('lat')
       student.string('long')
       student.string('favAnimal')
-      student.foreign('id').references('block_3.id')
+      student.foreign('block_id').references('block_3')
     })
   }
   

@@ -8,7 +8,7 @@ exports.up = function (knex, Promise) {
       table.string('hometownLat')
       table.string('hometownLong')
       table.string('prevOccupation')
-      table.foreign('id').references('block_4.id')
+      table.foreign('block_id').references('block_4')
     })
   }
   
