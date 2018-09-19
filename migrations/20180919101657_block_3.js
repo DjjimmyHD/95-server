@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('block_3', (block) => {
-        block.increments('block_id')
+        block.increments('id')
         block.string('block_name')
         block.string('curriculum')
     })

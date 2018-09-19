@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
       student.string('lat')
       student.string('long')
       student.string('favAnimal')
-      student.foreign('block_name').references('block_3')
+      student.integer('block_id').references('block_3.id')
     })
   }
   
